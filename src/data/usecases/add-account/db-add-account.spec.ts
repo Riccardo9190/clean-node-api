@@ -10,7 +10,7 @@ const makeEncrypter = (): Encrypter => {
   return new EncrypterStub()
 }
 
-const makeAddAccounRepository = (): AddAccountRepository => {
+const makeAddAccountRepository = (): AddAccountRepository => {
   class AddAccounRepositoryStub implements AddAccountRepository {
     async add (accountData: AddAccountModel): Promise<AccountModel> {
       const fakeAccount = {
@@ -33,7 +33,7 @@ interface SutTypes {
 
 const makeSut = (): SutTypes => {
   const encrypterStub = makeEncrypter()
-  const addAccountRepositoryStub = makeAddAccounRepository()
+  const addAccountRepositoryStub = makeAddAccountRepository()
   const sut = new DbAddAccount(encrypterStub, addAccountRepositoryStub)
   return {
     sut,
