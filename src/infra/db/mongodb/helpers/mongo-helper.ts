@@ -17,7 +17,7 @@ export const MongoHelper = {
     return this.client.db().collection(name)
   },
 
-  createAccount (accountData: AddAccountModel, insertedId: any): AccountModel {
+  buildAccountFromData (accountData: AddAccountModel, insertedId: any): AccountModel {
     return { ...accountData, id: insertedId.toString() }
   }
 }
